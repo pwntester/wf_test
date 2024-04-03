@@ -12,12 +12,11 @@ def can_i_deploy_documentation() -> bool:
     """
     Return True if documentation should be deployed
     """
-    print("DEBUG: ", Git.is_release(), Git.is_pre_release(), Git.branch())
-    print(
-        "DEBUG",
-        os.environ.get("GITHUB_REF_NAME", "-"),
-        os.environ.get("GITHUB_REF_TYPE", "-"),
-    )
+    print("is_release: ", Git.is_release())
+    print("is_pre_release", Git.is_pre_release())
+    print("branch", Git.branch())
+    print("GITHUB_REF_NAME", os.environ.get("GITHUB_REF_NAME", "-"))
+    print("GITHUB_REF_TYPE", os.environ.get("GITHUB_REF_TYPE", "-"))
     return Git.is_release() or Git.is_pre_release() or Git.branch() in ("main", "dev")
 
 
