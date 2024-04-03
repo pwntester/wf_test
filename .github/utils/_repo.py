@@ -182,6 +182,7 @@ class Git:
         """
         Return True if event is a release
         """
+        print("DEBUG", os.environ.get("GITHUB_REF_NAME", ""), os.environ.get("GITHUB_REF_TYPE", ""))
         ref = os.environ.get("GITHUB_REF_NAME", "")
         ref_type = os.environ.get("GITHUB_REF_TYPE", "")
         return ref_type == "tag" and bool(RELEASE_TAG_PATTERN.match(ref))
@@ -191,6 +192,7 @@ class Git:
         """
         Return True if event is a release
         """
+        print("DEBUG", os.environ.get("GITHUB_REF_NAME", ""), os.environ.get("GITHUB_REF_TYPE", ""))
         ref = os.environ.get("GITHUB_REF_NAME", "")
         ref_type = os.environ.get("GITHUB_REF_TYPE", "")
         return ref_type == "tag" and bool(PRE_RELEASE_TAG_PATTERN.match(ref))
@@ -200,6 +202,7 @@ class Git:
         """
         Return event branch
         """
+        print("DEBUG", os.environ.get("GITHUB_REF_NAME", ""), os.environ.get("GITHUB_REF_TYPE", ""))
         ref = os.environ.get("GITHUB_REF_NAME", "")
         ref_type = os.environ.get("GITHUB_REF_TYPE", "")
         return ref if ref_type == "branch" else ""

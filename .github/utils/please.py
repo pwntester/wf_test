@@ -11,6 +11,7 @@ def can_i_deploy_documentation() -> bool:
     """
     Return True if documentation should be deployed
     """
+    print("DEBUG: ", Git.is_release(), Git.is_pre_release(), Git.branch())
     return (
         Git.is_release()
         or Git.is_pre_release()
