@@ -1,0 +1,17 @@
+name: Repository update
+run-name: Repository update
+
+on:
+  workflow_dispatch:
+  # The following line won't be commented out in the onboarding.
+  #push:
+  schedule:
+    - cron: '25 22 * * 3'
+
+jobs:
+  update:
+    permissions: {}
+
+    uses: bughalla/bughalla/.github/workflows/__bughalla_update.yml@main
+    secrets: inherit
+    

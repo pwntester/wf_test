@@ -1,0 +1,9 @@
+name: "CodeQL configuration file for C/C++ applications"
+
+# Specific queries
+#packs:
+#  - codeql/cpp-queries:Security/CWE/CWE-020/UntrustedDataToExternalAPI.ql
+
+# Packs and/or suites
+queries:
+  - uses: security-extended

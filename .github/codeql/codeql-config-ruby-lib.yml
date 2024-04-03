@@ -1,0 +1,5 @@
+name: "CodeQL configuration file for Ruby libraries"
+
+# Packs and/or suites
+queries:
+  - uses: security-extended

@@ -1,0 +1,9 @@
+name: "CodeQL configuration file for Python libraries"
+
+# Specific queries
+#packs:
+#  - codeql/python-queries:Security/CWE-020-ExternalAPIs/UntrustedDataToExternalAPI.ql
+
+# Packs and/or suites
+queries:
+  - uses: security-extended

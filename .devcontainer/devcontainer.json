@@ -1,0 +1,31 @@
+{
+    "name": "Bughalla Codespaces configuration",
+    "postCreateCommand": "bash .devcontainer/startup.sh",
+    "hostRequirements": {
+        "cpus": 32,
+        "memory": "64gb"
+    },
+    "extensions": [
+        // github / microsoft
+        "github.vscode-codeql",
+        "ms-sarifvscode.sarif-viewer",
+        "github.vscode-github-actions",
+        "ms-vscode-remote.remote-containers",
+        "ms-vsliveshare.vsliveshare",
+        "GitHub.copilot",
+        "GitHub.copilot-labs",
+        // external
+        "slevesque.vscode-zipexplorer",
+    ],
+    "settings": {
+        "codeQL.cli.executablePath": "/home/codespace/.local/bin/codeql",
+        "codeQL.variantAnalysis.controllerRepo": "githubsecuritylab/seclab-mrva-controller",
+        "codeQL.runningQueries.memory": 58000,
+        "codeQL.runningQueries.numberOfThreads": 28,
+        "codeQL.runningTests.numberOfThreads": 28,
+        "codeQL.runningQueries.saveCache": true,
+        "codeQL.runningQueries.autoSave": true,
+        "sarif-viewer.connectToGithubCodeScanning": "on",
+        "editor.formatOnSave": true
+    }
+}

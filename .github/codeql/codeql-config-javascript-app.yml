@@ -1,0 +1,9 @@
+name: "CodeQL configuration file for JavaScript applications"
+
+# Specific queries
+#packs:
+#  - codeql/javascript-queries:Security/CWE-020/UntrustedDataToExternalAPI.ql
+
+# Packs and/or suites
+queries:
+  - uses: security-extended

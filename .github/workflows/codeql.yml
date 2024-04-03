@@ -1,0 +1,27 @@
+name: CodeQL
+run-name: CodeQL
+
+on: 
+  workflow_dispatch:
+  # IS_PRIMARY_UPDATE will be '' when the push comes from `update.yml` and 
+  # '#' when it comes from a job that needs it like `analyze-with-database`
+  push:
+    paths:
+      - '.github/workflows/codeql.yml'
+
+jobs:
+  analyze:
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [python, javascript, yaml]
+
+    uses: bughalla/bughalla/.github/workflows/__bughalla_codeql.yml@main
+    with:
+      language: ${{ matrix.language }}
+    secrets: inherit

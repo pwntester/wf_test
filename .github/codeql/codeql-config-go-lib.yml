@@ -1,0 +1,9 @@
+name: "CodeQL configuration file for Go libraries"
+
+# Specific queries
+packs:
+  - codeql/go-queries:experimental/CWE-942/CorsMisconfiguration.ql
+
+# Packs and/or suites
+queries:
+  - uses: security-extended
